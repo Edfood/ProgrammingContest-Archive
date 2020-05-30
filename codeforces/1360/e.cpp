@@ -10,24 +10,23 @@ const int mod = 1000000007;
 void solve() {
   int n;
   cin >> n;
-  if (n < 4) {
-    cout << -1 << endl;
-    return;
-  }
+  vector<string> s(n);
+  rep(i, n) cin >> s[i];
 
-  for (int i = n; i > 0; --i) {
-    if (i % 2) cout << i << " ";
+  bool ans = true;
+  for (int i = n - 2; i >= 0; --i) {
+    for (int j = n - 2; j >= 0; --j) {
+      if (s[i][j] != '1') continue;
+      if (s[i][j + 1] != '1' && s[i + 1][j] != '1') ans = false;
+    }
   }
-  cout << "4 2 ";
-  
-  for (int i = 6; i <= n; ++i) {
-    if (i % 2 == 0) cout << i << " ";
-  }
-  cout << endl;
+  if (ans) cout << "YES" << endl;
+  else cout << "NO" << endl;
 }
 
 int main() {
   int t;
   cin >> t;
+
   rep(i, t) solve();
-}
+}t

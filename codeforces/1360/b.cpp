@@ -6,24 +6,18 @@ using namespace std;
 typedef long long ll;
 typedef pair<int,int> P;
 const int mod = 1000000007;
-
+const int INF = 1001001001;
 void solve() {
   int n;
   cin >> n;
-  if (n < 4) {
-    cout << -1 << endl;
-    return;
+  vector<int> a(n);
+  rep(i, n) cin >> a[i];
+  sort(a.begin(), a.end());
+  int ans = INF;
+  for (int i = 0; i < n - 1; ++i) {
+    ans = min(a[i + 1] - a[i], ans);
   }
-
-  for (int i = n; i > 0; --i) {
-    if (i % 2) cout << i << " ";
-  }
-  cout << "4 2 ";
-  
-  for (int i = 6; i <= n; ++i) {
-    if (i % 2 == 0) cout << i << " ";
-  }
-  cout << endl;
+  cout << ans << endl;
 }
 
 int main() {
