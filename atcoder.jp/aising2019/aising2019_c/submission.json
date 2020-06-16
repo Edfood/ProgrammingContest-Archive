@@ -1,0 +1,12 @@
+{
+	"id": 14419400,
+	"epoch_second": 1592329476,
+	"problem_id": "aising2019_c",
+	"contest_id": "aising2019",
+	"user_id": "ScottShelby",
+	"language": "C++14 (GCC 5.4.1)",
+	"point": 300,
+	"length": 1417,
+	"result": "AC",
+	"execution_time": 20
+}
